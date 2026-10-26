@@ -20,7 +20,7 @@ dev = ["pytest>=8.0"]
 evidencegraph = "evidencegraph.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["evidencegraph*", "ingest*", "graph*", "evaluation*", "baselines*"]
+include = ["evidencegraph*", "ingest*", "graph*", "evaluation*", "baselines*", "extraction*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

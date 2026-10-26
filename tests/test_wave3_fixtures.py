@@ -59,9 +59,15 @@ def test_additional_fixture_papers_are_not_published_dois():
 def test_no_invented_published_dois_in_manifest():
     for paper in load_manifest()["papers"]:
         doi = str(paper.get("doi") or "")
-        assert doi.startswith("10.9999/"), doi
-        assert paper.get("fixture") is True
-        assert paper.get("not_a_published_doi") is True
+        if paper.get("fixture"):
+            assert doi.startswith("10.9999/"), doi
+            assert paper.get("not_a_published_doi") is True
+            continue
+        assert paper.get("not_a_published_doi") is False
+        assert paper.get("full_text_stored") is False
+        assert paper.get("license")
+        assert paper.get("resolved_via") in {"crossref", "europepmc"}
+        assert not doi.startswith("10.9999/")
 
 
 def test_additional_items_expert_entered_not_gold():

@@ -20,9 +20,17 @@ def ingest(
     *,
     license_check: bool = True,
     store: str | Path | None = None,
+    network: bool = False,
+    source: str = "local",
+    live_license: bool = False,
+    live: bool | None = None,
 ) -> dict[str, Any]:
     return resolve(
         doi,
         license_check=license_check,
         store_dir=Path(store) if store else None,
+        network=network,
+        source=source,
+        live_license=live_license,
+        live=live,
     )

@@ -1,0 +1,27 @@
+# Metadata only. License recorded from Crossref on 2026-10-26.
+# Abstract, PDF, and article text were not stored.
+doi: 10.1371/journal.pcbi.1005209
+title: "BIDS apps: Improving ease of use, accessibility, and reproducibility of neuroimaging data analysis methods"
+license: CC-BY-4.0
+is_oa: true
+redistributable: true
+full_text: null
+full_text_stored: false
+abstract: null
+origin: expert_entered
+extraction_is_gold: false
+resolved_via: crossref
+retrieval_date: 2026-10-26
+related_accessions:
+  - ds000003
+crossref:
+  license_url: http://creativecommons.org/licenses/by/4.0/
+  publisher: Public Library of Science (PLoS)
+  container_title: PLOS Computational Biology
+  issued: "2017-03-09"
+  type: journal-article
+  source: https://api.crossref.org/works/10.1371/journal.pcbi.1005209
+europepmc:
+  isOpenAccess: "Y"
+  license: cc by
+  pmcid: PMC5363996

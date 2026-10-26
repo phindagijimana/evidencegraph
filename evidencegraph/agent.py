@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Any
 
 from evidencegraph import ingest, load
-from ingest.resolve import LicenseRefused
+from ingest.resolve import LicenseRefused, NetworkScrapeRefused
 
 TOOLS: list[dict[str, Any]] = [
     {
@@ -35,6 +35,29 @@ TOOLS: list[dict[str, Any]] = [
                 "doi": {"type": "string"},
                 "license_check": {"type": "boolean", "default": True},
                 "store": {"type": "string"},
+                "network": {
+                    "type": "boolean",
+                    "default": False,
+                    "description": (
+                        "Request network. Still refuses without a local OA "
+                        "record. Optional Europe PMC / Crossref store "
+                        "metadata only. Never scrapes restricted full text."
+                    ),
+                },
+                "source": {
+                    "type": "string",
+                    "enum": ["local", "europepmc", "crossref"],
+                    "default": "local",
+                },
+                "live_license": {
+                    "type": "boolean",
+                    "default": False,
+                    "description": (
+                        "Metadata-only Crossref / Europe PMC license check "
+                        "when no local record exists. Refuses non-OA. "
+                        "Never stores full text."
+                    ),
+                },
             },
             "required": ["doi"],
         },
@@ -51,7 +74,12 @@ def call_tool(name: str, arguments: dict[str, Any]) -> dict[str, Any]:
                 arguments["doi"],
                 license_check=bool(arguments.get("license_check", True)),
                 store=arguments.get("store"),
+                network=bool(arguments.get("network", False)),
+                source=str(arguments.get("source") or "local"),
+                live_license=bool(arguments.get("live_license", False)),
             )
         except LicenseRefused as exc:
             return {"ok": False, "reason": "license_refused", "message": str(exc)}
+        except NetworkScrapeRefused as exc:
+            return {"ok": False, "reason": "scrape_refused", "message": str(exc)}
     raise ValueError(f"unknown tool: {name}")

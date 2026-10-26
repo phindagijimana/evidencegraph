@@ -1,0 +1,60 @@
+# Additional fixture item. Logged-run pointer may coexist with reported.
+# Hand-authored. Extraction is not gold. Not a measured execution.
+item_id: F005
+family: reproducibility_status
+split: pilot
+fixture: true
+not_a_published_doi: true
+paper_ids:
+  - P-HS-LOGGED-RUN-008
+unsupported: false
+abstain: false
+construction:
+  origin: expert_entered
+  extraction_is_gold: false
+  review_status: fixture
+gold_claim:
+  claim_id: C-F005
+  claim_family: hs_asymmetry_association
+  asserted_by: P-HS-LOGGED-RUN-008
+  statement: Hippocampal asymmetry is associated with pathology-defined hippocampal sclerosis; a fixture-logged run pointer is recorded.
+  effect_direction: associated
+  scope:
+    population: surgical epilepsy cohort
+    acquisition: 3T research MRI
+    method_identity: FreeSurfer 6.0
+    comparator: pathology-defined hippocampal sclerosis
+    timepoint: preoperative
+    outcome_definition: hippocampal asymmetry associated with HS
+  evidence_span:
+    source: P-HS-LOGGED-RUN-008
+    paragraph_id: results-p1
+    offsets: [0, 200]
+    role: finding
+    licenses_claim: true
+    license: CC-BY-4.0
+  relation: Supports
+  method:
+    id: M-FS6
+    measurement_definition: hippocampal asymmetry vs pathology HS
+    equivalence_mapping: none
+  code_artifact:
+    id: fixture-code-hs-seg
+    available: true
+    note: Hand-authored fixture pointer. Bytes not in git.
+  workflow_run:
+    id: fixture-run-hs-seg-001
+    available: true
+    encoding: PROV/RO-Crate
+    note: Hand-authored fixture pointer. Not a measured execution.
+  epistemic_states:
+    - reported
+    - evidence_linked
+    - expert_adjudicated
+    - computationally_reproduced
+  construction:
+    origin: expert_entered
+    extraction_is_gold: false
+  notes:
+    execution_not_measured: true
+    computationally_reproduced_coexists_with_reported: true

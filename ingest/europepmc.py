@@ -16,18 +16,16 @@ from urllib.request import Request, urlopen
 
 import yaml
 
-from ingest.resolve import LicenseRefused, ResolutionError, is_redistributable_oa
+from ingest.resolve import (
+    FULL_TEXT_KEYS,
+    LicenseRefused,
+    ResolutionError,
+    is_redistributable_oa,
+    strip_restricted_payload,
+)
 
 EUROPEPMC_SEARCH = "https://www.ebi.ac.uk/europepmc/webservices/rest/search"
 LIVE_ENV = "EG_LIVE_INGEST"
-FULL_TEXT_KEYS = (
-    "full_text",
-    "fullText",
-    "fullTextXml",
-    "fullTextXML",
-    "fullTextHtml",
-    "inTextAbstract",
-)
 
 Opener = Callable[[str], str]
 
@@ -78,11 +76,7 @@ def is_open_access(result: Mapping[str, Any] | None) -> bool:
 
 
 def strip_full_text(record: Mapping[str, Any]) -> dict[str, Any]:
-    cleaned = dict(record)
-    for key in FULL_TEXT_KEYS:
-        cleaned[key] = None
-    cleaned.pop("fullTextUrlList", None)
-    return cleaned
+    return strip_restricted_payload(record)
 
 
 def first_result(payload: Mapping[str, Any] | None) -> dict[str, Any] | None:
@@ -140,6 +134,7 @@ def metadata_from_result(result: Mapping[str, Any], *, doi: str) -> dict[str, An
         "redistributable": oa_flag and is_open_access(result),
         "full_text": None,
         "full_text_stored": False,
+        "abstract": None,
         "source": "europepmc",
         "fixture": bool(record.get("fixture", False)),
         "not_a_published_doi": bool(record.get("not_a_published_doi", False)),

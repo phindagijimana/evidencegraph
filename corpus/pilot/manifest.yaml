@@ -1,5 +1,7 @@
 # Pilot corpus manifest. v0 is hand-authored evaluation fixtures, not a 20-paper crawl.
 # Network off. No restricted full text. Fixture DOIs are not publications.
+# Real OA rows record Crossref / Europe PMC licenses; abstract and PDF were not stored.
+# S0 OpenNeuro ds000003 is an accession pointer, not a journal paper.
 retrieval_date: 2026-10-26
 network: off
 notes: >
@@ -22,6 +24,9 @@ papers:
     europepmc:
       isOpenAccess: "Y"
       license: cc by
+    crossref:
+      license_url: https://creativecommons.org/licenses/by/4.0
+      source: https://api.crossref.org/works/
 
   - paper_id: P-HS-COMMUNITY-002
     doi: 10.9999/eg.fixture.community-hs
@@ -37,6 +42,9 @@ papers:
     europepmc:
       isOpenAccess: "Y"
       license: cc by
+    crossref:
+      license_url: https://creativecommons.org/licenses/by/4.0
+      source: https://api.crossref.org/works/
 
   - paper_id: P-HS-CODEMENTION-003
     doi: 10.9999/eg.fixture.code-mention
@@ -52,6 +60,9 @@ papers:
     europepmc:
       isOpenAccess: "Y"
       license: cc by
+    crossref:
+      license_url: https://creativecommons.org/licenses/by/4.0
+      source: https://api.crossref.org/works/
 
   - paper_id: P-HS-ATLAS-004
     doi: 10.9999/eg.fixture.atlas-dkt
@@ -69,6 +80,9 @@ papers:
     europepmc:
       isOpenAccess: "Y"
       license: cc by
+    crossref:
+      license_url: https://creativecommons.org/licenses/by/4.0
+      source: https://api.crossref.org/works/
 
   - paper_id: P-HS-FIELDSTRENGTH-005
     doi: 10.9999/eg.fixture.field-1p5t
@@ -86,6 +100,9 @@ papers:
     europepmc:
       isOpenAccess: "Y"
       license: cc by
+    crossref:
+      license_url: https://creativecommons.org/licenses/by/4.0
+      source: https://api.crossref.org/works/
 
   - paper_id: P-HS-CONNECTOME-006
     doi: 10.9999/eg.fixture.connectome
@@ -103,6 +120,143 @@ papers:
     europepmc:
       isOpenAccess: "Y"
       license: cc by
+    crossref:
+      license_url: https://creativecommons.org/licenses/by/4.0
+      source: https://api.crossref.org/works/
+
+  - paper_id: P-HS-SURGICAL-OPP-007
+    doi: 10.9999/eg.fixture.surgical-opp
+    fixture: true
+    not_a_published_doi: true
+    title: Fixture — same surgical protocol, opposite HS-asymmetry direction
+    license: CC-BY-4.0
+    is_oa: true
+    redistributable: true
+    retrieval_date: 2026-10-26
+    full_text_stored: false
+    spans_path: corpus/pilot/sources/P-HS-SURGICAL-OPP-007.yaml
+    origin: expert_entered
+    extraction_is_gold: false
+    europepmc:
+      isOpenAccess: "Y"
+      license: cc by
+    crossref:
+      license_url: https://creativecommons.org/licenses/by/4.0
+      source: https://api.crossref.org/works/
+
+  - paper_id: P-HS-LOGGED-RUN-008
+    doi: 10.9999/eg.fixture.logged-run
+    fixture: true
+    not_a_published_doi: true
+    title: Fixture — logged run pointer (not a measured execution)
+    license: CC-BY-4.0
+    is_oa: true
+    redistributable: true
+    retrieval_date: 2026-10-26
+    full_text_stored: false
+    spans_path: corpus/pilot/sources/P-HS-LOGGED-RUN-008.yaml
+    origin: expert_entered
+    extraction_is_gold: false
+    europepmc:
+      isOpenAccess: "Y"
+      license: cc by
+    crossref:
+      license_url: https://creativecommons.org/licenses/by/4.0
+      source: https://api.crossref.org/works/
+
+  - paper_id: P-OA-BIDS-SDATA-2016
+    doi: 10.1038/sdata.2016.44
+    fixture: false
+    not_a_published_doi: false
+    title: The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments
+    license: CC-BY-4.0
+    is_oa: true
+    redistributable: true
+    retrieval_date: 2026-10-26
+    full_text_stored: false
+    spans_path: null
+    origin: expert_entered
+    extraction_is_gold: false
+    resolved_via: crossref
+    related_accessions:
+      - ds000003
+    notes: >
+      Real OA paper resolved from Crossref works on 2026-10-26.
+      License URL recorded. Abstract, PDF, and article text were not stored.
+      S0 OpenNeuro ds000003 is organized as BIDS, the format this paper describes.
+    crossref:
+      license_url: https://creativecommons.org/licenses/by/4.0
+      publisher: Springer Science and Business Media LLC
+      container_title: Scientific Data
+      issued: "2016-06-21"
+      type: journal-article
+      source: https://api.crossref.org/works/10.1038/sdata.2016.44
+    europepmc:
+      isOpenAccess: "Y"
+      license: cc by
+
+  - paper_id: P-OA-BIDSAPPS-PCB-2017
+    doi: 10.1371/journal.pcbi.1005209
+    fixture: false
+    not_a_published_doi: false
+    title: "BIDS apps: Improving ease of use, accessibility, and reproducibility of neuroimaging data analysis methods"
+    license: CC-BY-4.0
+    is_oa: true
+    redistributable: true
+    retrieval_date: 2026-10-26
+    full_text_stored: false
+    spans_path: null
+    origin: expert_entered
+    extraction_is_gold: false
+    resolved_via: crossref
+    related_accessions:
+      - ds000003
+    notes: >
+      Real OA paper resolved from Crossref works on 2026-10-26.
+      License URL recorded. Abstract, PDF, and article text were not stored.
+    crossref:
+      license_url: http://creativecommons.org/licenses/by/4.0/
+      publisher: Public Library of Science (PLoS)
+      container_title: PLOS Computational Biology
+      issued: "2017-03-09"
+      type: journal-article
+      source: https://api.crossref.org/works/10.1371/journal.pcbi.1005209
+    europepmc:
+      isOpenAccess: "Y"
+      license: cc by
+      pmcid: PMC5363996
+
+  - paper_id: P-OA-OPENNEURO-ELIFE-2021
+    doi: 10.7554/eLife.71774
+    fixture: false
+    not_a_published_doi: false
+    title: The OpenNeuro resource for sharing of neuroscience data
+    license: CC-BY-4.0
+    is_oa: true
+    redistributable: true
+    retrieval_date: 2026-10-26
+    full_text_stored: false
+    spans_path: null
+    origin: expert_entered
+    extraction_is_gold: false
+    resolved_via: crossref
+    related_accessions:
+      - ds000003
+    notes: >
+      Real OA paper resolved from Crossref works on 2026-10-26.
+      License URL recorded. Abstract, PDF, and article text were not stored.
+      OpenNeuro hosts S0 accession ds000003.
+    crossref:
+      license_url: http://creativecommons.org/licenses/by/4.0/
+      publisher: eLife Sciences Publications, Ltd
+      container_title: eLife
+      issued: "2021-10-18"
+      type: journal-article
+      source: https://api.crossref.org/works/10.7554/eLife.71774
+    europepmc:
+      isOpenAccess: "Y"
+      license: cc by
+      pmcid: PMC8550750
 
   - paper_id: P-RESTRICTED-MOCK
     doi: 10.9999/restricted-mock
@@ -118,3 +272,42 @@ papers:
     europepmc:
       isOpenAccess: "N"
       license: null
+    crossref:
+      license_url: null
+      source: https://api.crossref.org/works/
+
+accessions:
+  - accession: ds000003
+    kind: openneuro_dataset
+    doi: 10.18112/openneuro.ds000003.v1.0.0
+    title: Rhyme judgment
+    publisher: OpenNeuro
+    url: https://openneuro.org/datasets/ds000003
+    fixture: false
+    not_a_journal_article: true
+    bytes_in_git: false
+    nifti_in_this_folder: false
+    full_text_stored: false
+    extraction_is_gold: false
+    retrieval_date: 2026-10-26
+    resolved_via: datacite
+    record_path: corpus/pilot/accessions/ds000003.yaml
+    external_path: shared/data/external/ds000003
+    related_papers:
+      - P-OA-BIDS-SDATA-2016
+      - P-OA-BIDSAPPS-PCB-2017
+      - P-OA-OPENNEURO-ELIFE-2021
+    license_statements:
+      - source: shared/LICENSES.md
+        license: PDDL-1.0
+      - source: dataset_description.json
+        license: CC0
+    datacite:
+      title: Rhyme judgment
+      publisher: OpenNeuro
+      source: https://api.datacite.org/dois/10.18112/openneuro.ds000003.v1.0.0
+    notes: >
+      S0 imaging accession. Not a journal article. Crossref has no works
+      record. DataCite returned title and publisher only. License statements
+      are copied from shared pins / the public BIDS root. Bytes stay outside
+      04_EvidenceGraph.

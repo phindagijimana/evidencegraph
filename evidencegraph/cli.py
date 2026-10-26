@@ -17,7 +17,7 @@ from graph.store import (
     load_document,
     to_jsonld,
 )
-from ingest.resolve import LicenseRefused, ResolutionError, resolve
+from ingest.resolve import LicenseRefused, NetworkScrapeRefused, ResolutionError, resolve
 
 
 def _store(path: str | None) -> ClaimStore:
@@ -27,14 +27,22 @@ def _store(path: str | None) -> ClaimStore:
 
 def cmd_ingest(args: argparse.Namespace) -> int:
     try:
+        live_license = bool(getattr(args, "live_license", False))
         record = resolve(
             args.doi,
             license_check=bool(args.license_check),
             store_dir=Path(args.store) if args.store else None,
+            network=bool(getattr(args, "network", False)),
+            source=str(getattr(args, "source", "local") or "local"),
+            live_license=live_license,
+            live=True if live_license else None,
         )
     except LicenseRefused as exc:
         print(str(exc), file=sys.stderr)
         return 2
+    except NetworkScrapeRefused as exc:
+        print(str(exc), file=sys.stderr)
+        return 3
     except ResolutionError as exc:
         print(str(exc), file=sys.stderr)
         return 1
@@ -104,6 +112,30 @@ def build_parser() -> argparse.ArgumentParser:
     p_ingest = sub.add_parser("ingest", help="Resolve DOI/PMCID; refuse if not OA")
     p_ingest.add_argument("--doi", required=True)
     p_ingest.add_argument("--license-check", action="store_true")
+    p_ingest.add_argument(
+        "--network",
+        action="store_true",
+        help=(
+            "Request network. Still refuses unless a local OA record exists. "
+            "Optional Europe PMC / Crossref attach metadata only. "
+            "Never scrapes restricted full text."
+        ),
+    )
+    p_ingest.add_argument(
+        "--source",
+        default="local",
+        choices=("local", "europepmc", "crossref"),
+        help="Optional client when --network and a local OA record exist.",
+    )
+    p_ingest.add_argument(
+        "--live-license",
+        action="store_true",
+        help=(
+            "Metadata-only Crossref / Europe PMC license check when no local "
+            "record exists. Still refuses non-OA. Never stores full text. "
+            "Distinct from --network, which refuses scrape without a local OA record."
+        ),
+    )
     p_ingest.set_defaults(func=cmd_ingest)
 
     p_load = sub.add_parser("load", help="Load a hand-authored claim or gold item")

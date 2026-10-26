@@ -16,7 +16,7 @@ from evidencegraph import load, ingest
 load("I003.yaml", store="./store")
 ```
 
-Python 3.11+. Network off. No restricted full text. Pilot DOIs are fixtures, not journal articles.
+Python 3.11+. Network off by default. Optional `--network --source europepmc|crossref` still stores metadata only when a local OA record exists. Optional `--live-license` may look up a Crossref / Europe PMC license when no local record exists; it still refuses non-OA and never stores full text. Pilot DOIs are fixtures unless a real OA license was recorded from Crossref.
 
 Optional agent transport (load / ingest only): `python -m evidencegraph.mcp`
 

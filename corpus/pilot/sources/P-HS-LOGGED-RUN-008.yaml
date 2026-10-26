@@ -1,0 +1,17 @@
+# Hand-authored evaluation fixture. Not extracted from a published article.
+# The logged-run pointer is a fixture id, not a measured execution.
+paper_id: P-HS-LOGGED-RUN-008
+doi: 10.9999/eg.fixture.logged-run
+fixture: true
+not_a_published_doi: true
+license: CC-BY-4.0
+origin: expert_entered
+extraction_is_gold: false
+spans:
+  - paragraph_id: results-p1
+    role: finding
+    licenses_claim: true
+    text: >
+      In this surgical epilepsy cohort, hippocampal asymmetry measured with
+      FreeSurfer 6.0 was associated with pathology-defined hippocampal
+      sclerosis. A fixture-logged workflow run is recorded as a pointer only.
