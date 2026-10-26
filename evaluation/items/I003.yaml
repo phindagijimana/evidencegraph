@@ -1,0 +1,84 @@
+# Two HS papers: surgical + FreeSurfer vs community + ASHS. Qualifies, not Contradicts.
+# Hand-authored gold. Extraction is not gold.
+item_id: I003
+family: apparent_contradiction
+split: pilot
+paper_ids:
+  - P-HS-SURGICAL-001
+  - P-HS-COMMUNITY-002
+unsupported: false
+abstain: false
+construction:
+  origin: expert_entered
+  extraction_is_gold: false
+  review_status: gold
+gold_claim:
+  claim_id: C-I003-A
+  claim_family: hs_asymmetry_association
+  asserted_by: P-HS-SURGICAL-001
+  statement: Hippocampal asymmetry is associated with pathology-defined hippocampal sclerosis in a surgical cohort segmented with FreeSurfer 6.0.
+  effect_direction: associated
+  scope:
+    population: surgical epilepsy cohort
+    acquisition: 3T research MRI
+    method_identity: FreeSurfer 6.0
+    comparator: pathology-defined hippocampal sclerosis
+    timepoint: preoperative
+    outcome_definition: hippocampal asymmetry associated with HS
+  evidence_span:
+    source: P-HS-SURGICAL-001
+    paragraph_id: results-p2
+    offsets: [0, 148]
+    role: finding
+    licenses_claim: true
+    license: CC-BY-4.0
+  relation: Qualifies
+  method:
+    id: M-FS6
+    measurement_definition: hippocampal asymmetry vs pathology HS
+    equivalence_mapping: none
+  code_artifact: unavailable
+  workflow_run: unavailable
+  epistemic_states:
+    - reported
+    - evidence_linked
+    - expert_adjudicated
+    - unknown_not_assessed
+  construction:
+    origin: expert_entered
+    extraction_is_gold: false
+compare_claim:
+  claim_id: C-I003-B
+  claim_family: hs_asymmetry_association
+  asserted_by: P-HS-COMMUNITY-002
+  statement: Hippocampal asymmetry is not associated with imaging-defined hippocampal sclerosis in a community cohort segmented with ASHS.
+  effect_direction: not_associated
+  scope:
+    population: community epilepsy cohort
+    acquisition: 1.5T community MRI
+    method_identity: ASHS
+    comparator: imaging-defined hippocampal sclerosis
+    timepoint: outpatient
+    outcome_definition: hippocampal asymmetry associated with HS
+  evidence_span:
+    source: P-HS-COMMUNITY-002
+    paragraph_id: results-p1
+    offsets: [0, 128]
+    role: finding
+    licenses_claim: true
+    license: CC-BY-4.0
+  relation: Qualifies
+  method:
+    id: M-ASHS
+    measurement_definition: hippocampal asymmetry vs imaging HS
+    equivalence_mapping: none
+  code_artifact: unavailable
+  workflow_run: unavailable
+  epistemic_states:
+    - reported
+    - evidence_linked
+    - expert_adjudicated
+    - unknown_not_assessed
+  construction:
+    origin: expert_entered
+    extraction_is_gold: false

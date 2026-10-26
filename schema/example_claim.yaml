@@ -1,0 +1,32 @@
+# Illustrative EvidenceGraph record (E1–E3). Placeholder DOI; not an extracted gold label.
+claim_id: C001
+asserted_by: DOI-placeholder
+statement: Hippocampal asymmetry is associated with pathology-defined hippocampal sclerosis in the studied cohort.
+scope:
+  population: surgical epilepsy cohort
+  acquisition: unknown
+  method_identity: MRI segmentation plus pathology comparator
+  comparator: pathology-defined hippocampal sclerosis
+  timepoint: unknown
+  outcome_definition: hippocampal asymmetry associated with HS
+evidence_span:
+  source: DOI-placeholder
+  offsets: pending
+  license: pending
+relation: Supports
+effect_estimate: unknown
+limitations:
+  - single_site_or_unknown
+verification: pending_expert
+method:
+  id: M001
+  measurement_definition: hippocampal asymmetry vs pathology HS
+  equivalence_mapping: none
+code_artifact: unavailable
+workflow_run: unavailable
+epistemic_states:
+  - reported
+  - unknown_not_assessed
+notes:
+  citation_is_not_support: true
+  missing_code_is_not_failed_reproduction: true

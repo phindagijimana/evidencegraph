@@ -1,0 +1,11 @@
+# Hand-authored evaluation fixture. Not extracted from a published article.
+paper_id: P-HS-COMMUNITY-002
+doi: 10.9999/eg.fixture.community-hs
+license: CC-BY-4.0
+spans:
+  - paragraph_id: results-p1
+    role: finding
+    licenses_claim: true
+    text: >
+      In a community epilepsy cohort, hippocampal asymmetry measured with
+      ASHS was not associated with imaging-defined hippocampal sclerosis.

@@ -1,0 +1,120 @@
+# Pilot corpus manifest. v0 is hand-authored evaluation fixtures, not a 20-paper crawl.
+# Network off. No restricted full text. Fixture DOIs are not publications.
+retrieval_date: 2026-10-26
+network: off
+notes: >
+  Spans under corpus/pilot/sources/ are original evaluation fixtures written
+  for this protocol. They are not republished journal articles. The mocked
+  non-OA row exists only so ingest can refuse it.
+
+papers:
+  - paper_id: P-HS-SURGICAL-001
+    doi: 10.9999/eg.fixture.surgical-hs
+    fixture: true
+    not_a_published_doi: true
+    title: Fixture — surgical HS asymmetry finding
+    license: CC-BY-4.0
+    is_oa: true
+    redistributable: true
+    retrieval_date: 2026-10-26
+    full_text_stored: false
+    spans_path: corpus/pilot/sources/P-HS-SURGICAL-001.yaml
+    europepmc:
+      isOpenAccess: "Y"
+      license: cc by
+
+  - paper_id: P-HS-COMMUNITY-002
+    doi: 10.9999/eg.fixture.community-hs
+    fixture: true
+    not_a_published_doi: true
+    title: Fixture — community HS asymmetry finding
+    license: CC-BY-4.0
+    is_oa: true
+    redistributable: true
+    retrieval_date: 2026-10-26
+    full_text_stored: false
+    spans_path: corpus/pilot/sources/P-HS-COMMUNITY-002.yaml
+    europepmc:
+      isOpenAccess: "Y"
+      license: cc by
+
+  - paper_id: P-HS-CODEMENTION-003
+    doi: 10.9999/eg.fixture.code-mention
+    fixture: true
+    not_a_published_doi: true
+    title: Fixture — code mentioned, no logged run
+    license: CC-BY-4.0
+    is_oa: true
+    redistributable: true
+    retrieval_date: 2026-10-26
+    full_text_stored: false
+    spans_path: corpus/pilot/sources/P-HS-CODEMENTION-003.yaml
+    europepmc:
+      isOpenAccess: "Y"
+      license: cc by
+
+  - paper_id: P-HS-ATLAS-004
+    doi: 10.9999/eg.fixture.atlas-dkt
+    fixture: true
+    not_a_published_doi: true
+    title: Fixture — DKT atlas hippocampal labels
+    license: CC-BY-4.0
+    is_oa: true
+    redistributable: true
+    retrieval_date: 2026-10-26
+    full_text_stored: false
+    spans_path: corpus/pilot/sources/P-HS-ATLAS-004.yaml
+    origin: expert_entered
+    extraction_is_gold: false
+    europepmc:
+      isOpenAccess: "Y"
+      license: cc by
+
+  - paper_id: P-HS-FIELDSTRENGTH-005
+    doi: 10.9999/eg.fixture.field-1p5t
+    fixture: true
+    not_a_published_doi: true
+    title: Fixture — 1.5T community transfer has no supporting scope
+    license: CC-BY-4.0
+    is_oa: true
+    redistributable: true
+    retrieval_date: 2026-10-26
+    full_text_stored: false
+    spans_path: corpus/pilot/sources/P-HS-FIELDSTRENGTH-005.yaml
+    origin: expert_entered
+    extraction_is_gold: false
+    europepmc:
+      isOpenAccess: "Y"
+      license: cc by
+
+  - paper_id: P-HS-CONNECTOME-006
+    doi: 10.9999/eg.fixture.connectome
+    fixture: true
+    not_a_published_doi: true
+    title: Fixture — structural connectome without HS comparator
+    license: CC-BY-4.0
+    is_oa: true
+    redistributable: true
+    retrieval_date: 2026-10-26
+    full_text_stored: false
+    spans_path: corpus/pilot/sources/P-HS-CONNECTOME-006.yaml
+    origin: expert_entered
+    extraction_is_gold: false
+    europepmc:
+      isOpenAccess: "Y"
+      license: cc by
+
+  - paper_id: P-RESTRICTED-MOCK
+    doi: 10.9999/restricted-mock
+    fixture: true
+    not_a_published_doi: true
+    title: Mocked non-OA record for ingest refuse
+    license: all-rights-reserved
+    is_oa: false
+    redistributable: false
+    retrieval_date: 2026-10-26
+    full_text_stored: false
+    spans_path: null
+    europepmc:
+      isOpenAccess: "N"
+      license: null

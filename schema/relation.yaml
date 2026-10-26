@@ -1,0 +1,24 @@
+# EvidenceGraph E1 relation vocabulary. Citation polarity is not a relation.
+schema_version: 0.1
+relations:
+  Supports:
+    meaning: same claim family, comparable scope, same direction
+  Contradicts:
+    meaning: same claim family, comparable scope, opposite direction
+  Qualifies:
+    meaning: same claim family, scopes not comparable — not a contradiction
+  unknown_scope:
+    meaning: claim family matches, scope fields insufficient to decide Supports vs Contradicts vs Qualifies
+  none:
+    meaning: citation or paper exists, span does not license the claim
+scope_fields:
+  - population
+  - acquisition
+  - method_identity
+  - comparator
+  - timepoint
+  - outcome_definition
+rules:
+  citation_is_not_support: true
+  keyword_is_not_method_equivalence: true
+  missing_scope_field: unknown_not_inferred

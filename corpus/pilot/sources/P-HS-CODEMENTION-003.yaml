@@ -1,0 +1,17 @@
+# Hand-authored evaluation fixture. Not extracted from a published article.
+paper_id: P-HS-CODEMENTION-003
+doi: 10.9999/eg.fixture.code-mention
+license: CC-BY-4.0
+spans:
+  - paragraph_id: results-p1
+    role: finding
+    licenses_claim: true
+    text: >
+      Hippocampal asymmetry in the studied surgical cohort was associated
+      with pathology-defined hippocampal sclerosis.
+  - paragraph_id: data-availability-p1
+    role: background
+    licenses_claim: false
+    text: >
+      Segmentation scripts are mentioned in a public repository README.
+      No container digest, inputs, or logged workflow run is provided.

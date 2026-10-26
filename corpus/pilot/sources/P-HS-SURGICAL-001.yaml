@@ -1,0 +1,17 @@
+# Hand-authored evaluation fixture. Not extracted from a published article.
+paper_id: P-HS-SURGICAL-001
+doi: 10.9999/eg.fixture.surgical-hs
+license: CC-BY-4.0
+spans:
+  - paragraph_id: background-p1
+    role: background
+    licenses_claim: false
+    text: >
+      The hippocampus is a medial temporal structure implicated in memory
+      and is routinely inspected on preoperative MRI.
+  - paragraph_id: results-p2
+    role: finding
+    licenses_claim: true
+    text: >
+      In this surgical epilepsy cohort, hippocampal asymmetry measured with
+      FreeSurfer 6.0 was associated with pathology-defined hippocampal sclerosis.

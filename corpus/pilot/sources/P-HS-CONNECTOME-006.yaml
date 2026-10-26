@@ -1,0 +1,21 @@
+# Hand-authored evaluation fixture. Not extracted from a published article.
+paper_id: P-HS-CONNECTOME-006
+doi: 10.9999/eg.fixture.connectome
+fixture: true
+not_a_published_doi: true
+license: CC-BY-4.0
+origin: expert_entered
+extraction_is_gold: false
+spans:
+  - paragraph_id: background-p1
+    role: background
+    licenses_claim: false
+    text: >
+      Structural connectomes summarize streamline counts between
+      gray-matter nodes.
+  - paragraph_id: results-p1
+    role: finding
+    licenses_claim: true
+    text: >
+      Mesial-temporal streamline counts were summarized without a
+      hippocampal-sclerosis pathology comparator.

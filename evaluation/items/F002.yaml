@@ -1,0 +1,49 @@
+# Additional fixture item. Transfer to 1.5T community MRI has no supporting scope → abstain.
+# Hand-authored. Extraction is not gold. Not a published DOI.
+item_id: F002
+family: method_transfer
+split: pilot
+fixture: true
+not_a_published_doi: true
+paper_ids:
+  - P-HS-FIELDSTRENGTH-005
+unsupported: false
+abstain: true
+construction:
+  origin: expert_entered
+  extraction_is_gold: false
+  review_status: fixture
+gold_claim:
+  claim_id: C-F002
+  claim_family: hs_asymmetry_association
+  asserted_by: P-HS-FIELDSTRENGTH-005
+  statement: The surgical 3 tesla hippocampal-asymmetry finding does not carry a documented mapping onto 1.5 tesla community MRI.
+  effect_direction: unknown
+  scope:
+    population: unknown
+    acquisition: 1.5T community MRI
+    method_identity: unknown
+    comparator: unknown
+    timepoint: outpatient
+    outcome_definition: unknown
+  evidence_span:
+    source: P-HS-FIELDSTRENGTH-005
+    paragraph_id: methods-p1
+    offsets: [0, 130]
+    role: background
+    licenses_claim: false
+    license: CC-BY-4.0
+  relation: unknown_scope
+  method:
+    id: M-UNKNOWN
+    measurement_definition: unknown
+    equivalence_mapping: none
+  code_artifact: unavailable
+  workflow_run: unavailable
+  epistemic_states:
+    - reported
+    - expert_adjudicated
+    - unknown_not_assessed
+  construction:
+    origin: expert_entered
+    extraction_is_gold: false

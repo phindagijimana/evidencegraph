@@ -1,0 +1,48 @@
+# Correct paper, span is background. Unsupported; relation none.
+# Hand-authored gold. Extraction is not gold.
+item_id: I002
+family: unsupported_synthesis
+split: pilot
+paper_ids:
+  - P-HS-SURGICAL-001
+unsupported: true
+abstain: false
+construction:
+  origin: expert_entered
+  extraction_is_gold: false
+  review_status: gold
+gold_claim:
+  claim_id: C-I002
+  claim_family: hs_asymmetry_association
+  asserted_by: P-HS-SURGICAL-001
+  statement: Hippocampal asymmetry is associated with pathology-defined hippocampal sclerosis in the studied surgical cohort.
+  effect_direction: associated
+  scope:
+    population: surgical epilepsy cohort
+    acquisition: 3T research MRI
+    method_identity: FreeSurfer 6.0
+    comparator: pathology-defined hippocampal sclerosis
+    timepoint: preoperative
+    outcome_definition: hippocampal asymmetry associated with HS
+  evidence_span:
+    source: P-HS-SURGICAL-001
+    paragraph_id: background-p1
+    offsets: [0, 118]
+    role: background
+    licenses_claim: false
+    license: CC-BY-4.0
+  relation: none
+  effect_estimate: unknown
+  method:
+    id: M-FS6
+    measurement_definition: hippocampal asymmetry vs pathology HS
+    equivalence_mapping: none
+  code_artifact: unavailable
+  workflow_run: unavailable
+  epistemic_states:
+    - reported
+    - expert_adjudicated
+    - unknown_not_assessed
+  construction:
+    origin: expert_entered
+    extraction_is_gold: false

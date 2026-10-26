@@ -1,0 +1,86 @@
+# Additional fixture item. Connectome streamlines vs HS pathology — incomparable outcome.
+# Hand-authored. Extraction is not gold. Not a published DOI.
+item_id: F003
+family: method_transfer
+split: pilot
+fixture: true
+not_a_published_doi: true
+paper_ids:
+  - P-HS-SURGICAL-001
+  - P-HS-CONNECTOME-006
+unsupported: false
+abstain: false
+construction:
+  origin: expert_entered
+  extraction_is_gold: false
+  review_status: fixture
+gold_claim:
+  claim_id: C-F003-A
+  claim_family: hs_asymmetry_association
+  asserted_by: P-HS-SURGICAL-001
+  statement: Hippocampal asymmetry is associated with pathology-defined hippocampal sclerosis in a surgical cohort.
+  effect_direction: associated
+  scope:
+    population: surgical epilepsy cohort
+    acquisition: 3T research MRI
+    method_identity: FreeSurfer 6.0
+    comparator: pathology-defined hippocampal sclerosis
+    timepoint: preoperative
+    outcome_definition: hippocampal asymmetry associated with HS
+  evidence_span:
+    source: P-HS-SURGICAL-001
+    paragraph_id: results-p2
+    offsets: [0, 148]
+    role: finding
+    licenses_claim: true
+    license: CC-BY-4.0
+  relation: Qualifies
+  method:
+    id: M-FS6
+    measurement_definition: hippocampal asymmetry vs pathology HS
+    equivalence_mapping: none
+  code_artifact: unavailable
+  workflow_run: unavailable
+  epistemic_states:
+    - reported
+    - evidence_linked
+    - expert_adjudicated
+    - unknown_not_assessed
+  construction:
+    origin: expert_entered
+    extraction_is_gold: false
+compare_claim:
+  claim_id: C-F003-B
+  claim_family: hs_asymmetry_association
+  asserted_by: P-HS-CONNECTOME-006
+  statement: Mesial-temporal streamline counts were summarized without a hippocampal-sclerosis pathology comparator.
+  effect_direction: unknown
+  scope:
+    population: unknown
+    acquisition: diffusion MRI
+    method_identity: structural connectome streamlines
+    comparator: none
+    timepoint: unknown
+    outcome_definition: mesial-temporal streamline counts
+  evidence_span:
+    source: P-HS-CONNECTOME-006
+    paragraph_id: results-p1
+    offsets: [0, 110]
+    role: finding
+    licenses_claim: true
+    license: CC-BY-4.0
+  relation: Qualifies
+  method:
+    id: M-CONN
+    measurement_definition: streamline counts between mesial-temporal nodes
+    equivalence_mapping: none
+  code_artifact: unavailable
+  workflow_run: unavailable
+  epistemic_states:
+    - reported
+    - evidence_linked
+    - expert_adjudicated
+    - unknown_not_assessed
+  construction:
+    origin: expert_entered
+    extraction_is_gold: false

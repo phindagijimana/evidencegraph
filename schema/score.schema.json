@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evidencegraph.local/schemas/score.schema.json",
+  "title": "EvidenceGraph item score (E1–E4)",
+  "description": "Illustrative evaluation record. Not a frozen evaluation contract.",
+  "type": "object",
+  "required": [
+    "item_id",
+    "paper_ids",
+    "family",
+    "arm",
+    "attribution_correct",
+    "unsupported",
+    "abstained",
+    "relation_gold",
+    "relation_predicted",
+    "false_reproduction"
+  ],
+  "properties": {
+    "item_id": { "type": "string" },
+    "paper_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "family": {
+      "type": "string",
+      "enum": [
+        "attribution",
+        "apparent_contradiction",
+        "method_transfer",
+        "reproducibility_status",
+        "unsupported_synthesis"
+      ]
+    },
+    "arm": {
+      "type": "string",
+      "enum": ["B0", "B1", "B2", "B3", "B4", "B5", "B6"]
+    },
+    "attribution_correct": {
+      "description": "Gold (claim, source, span, scope) all match",
+      "type": "boolean"
+    },
+    "unsupported": {
+      "description": "Citation or paper exists, span does not license the claim",
+      "type": "boolean"
+    },
+    "abstained": { "type": "boolean" },
+    "span_correct": { "type": "boolean" },
+    "scope_correct": { "type": "boolean" },
+    "relation_gold": {
+      "type": "string",
+      "enum": ["Supports", "Contradicts", "Qualifies", "unknown_scope", "none"]
+    },
+    "relation_predicted": {
+      "type": "string",
+      "enum": ["Supports", "Contradicts", "Qualifies", "unknown_scope", "none"]
+    },
+    "epistemic_states_gold": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "reported",
+          "evidence_linked",
+          "expert_adjudicated",
+          "computationally_reproduced",
+          "independently_replicated",
+          "contested",
+          "unknown_not_assessed"
+        ]
+      }
+    },
+    "false_reproduction": {
+      "description": "System asserted computationally_reproduced when artifacts were missing, unrun, or disagreed",
+      "type": "boolean"
+    },
+    "infrastructure_failure": { "type": "boolean" },
+    "cost": {
+      "type": "object",
+      "properties": {
+        "tokens": { "type": "integer" },
+        "usd": { "type": "number" }
+      }
+    }
+  }
+}

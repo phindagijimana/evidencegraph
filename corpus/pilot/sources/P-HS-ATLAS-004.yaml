@@ -1,0 +1,21 @@
+# Hand-authored evaluation fixture. Not extracted from a published article.
+paper_id: P-HS-ATLAS-004
+doi: 10.9999/eg.fixture.atlas-dkt
+fixture: true
+not_a_published_doi: true
+license: CC-BY-4.0
+origin: expert_entered
+extraction_is_gold: false
+spans:
+  - paragraph_id: background-p1
+    role: background
+    licenses_claim: false
+    text: >
+      Atlas choice changes regional label names even when the same
+      T1-weighted volume is used.
+  - paragraph_id: results-p1
+    role: finding
+    licenses_claim: true
+    text: >
+      In this fixture series, DKT-atlas hippocampal labels did not match
+      whole-hippocampus volume from a different parcellation.

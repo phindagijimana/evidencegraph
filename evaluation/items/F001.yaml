@@ -1,0 +1,86 @@
+# Additional fixture item. Atlas / parcellation mismatch → Qualifies, not Contradicts.
+# Hand-authored. Extraction is not gold. Not a published DOI.
+item_id: F001
+family: apparent_contradiction
+split: pilot
+fixture: true
+not_a_published_doi: true
+paper_ids:
+  - P-HS-SURGICAL-001
+  - P-HS-ATLAS-004
+unsupported: false
+abstain: false
+construction:
+  origin: expert_entered
+  extraction_is_gold: false
+  review_status: fixture
+gold_claim:
+  claim_id: C-F001-A
+  claim_family: hs_asymmetry_association
+  asserted_by: P-HS-SURGICAL-001
+  statement: Hippocampal asymmetry is associated with pathology-defined hippocampal sclerosis when segmented with FreeSurfer 6.0.
+  effect_direction: associated
+  scope:
+    population: surgical epilepsy cohort
+    acquisition: 3T research MRI
+    method_identity: FreeSurfer 6.0
+    comparator: pathology-defined hippocampal sclerosis
+    timepoint: preoperative
+    outcome_definition: hippocampal asymmetry associated with HS
+  evidence_span:
+    source: P-HS-SURGICAL-001
+    paragraph_id: results-p2
+    offsets: [0, 148]
+    role: finding
+    licenses_claim: true
+    license: CC-BY-4.0
+  relation: Qualifies
+  method:
+    id: M-FS6
+    measurement_definition: hippocampal asymmetry vs pathology HS
+    equivalence_mapping: none
+  code_artifact: unavailable
+  workflow_run: unavailable
+  epistemic_states:
+    - reported
+    - evidence_linked
+    - expert_adjudicated
+    - unknown_not_assessed
+  construction:
+    origin: expert_entered
+    extraction_is_gold: false
+compare_claim:
+  claim_id: C-F001-B
+  claim_family: hs_asymmetry_association
+  asserted_by: P-HS-ATLAS-004
+  statement: DKT-atlas hippocampal labels did not match whole-hippocampus volume from a different parcellation.
+  effect_direction: not_associated
+  scope:
+    population: fixture series
+    acquisition: T1-weighted volume
+    method_identity: DKT atlas labels
+    comparator: whole-hippocampus volume from a different parcellation
+    timepoint: unknown
+    outcome_definition: label-volume agreement
+  evidence_span:
+    source: P-HS-ATLAS-004
+    paragraph_id: results-p1
+    offsets: [0, 120]
+    role: finding
+    licenses_claim: true
+    license: CC-BY-4.0
+  relation: Qualifies
+  method:
+    id: M-DKT
+    measurement_definition: DKT hippocampal labels vs alternate volume
+    equivalence_mapping: none
+  code_artifact: unavailable
+  workflow_run: unavailable
+  epistemic_states:
+    - reported
+    - evidence_linked
+    - expert_adjudicated
+    - unknown_not_assessed
+  construction:
+    origin: expert_entered
+    extraction_is_gold: false

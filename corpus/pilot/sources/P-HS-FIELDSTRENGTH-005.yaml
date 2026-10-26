@@ -1,0 +1,21 @@
+# Hand-authored evaluation fixture. Not extracted from a published article.
+paper_id: P-HS-FIELDSTRENGTH-005
+doi: 10.9999/eg.fixture.field-1p5t
+fixture: true
+not_a_published_doi: true
+license: CC-BY-4.0
+origin: expert_entered
+extraction_is_gold: false
+spans:
+  - paragraph_id: background-p1
+    role: background
+    licenses_claim: false
+    text: >
+      Field strength and outpatient acquisition differ from research
+      3 tesla protocols.
+  - paragraph_id: methods-p1
+    role: background
+    licenses_claim: false
+    text: >
+      No protocol in this fixture documents a 1.5 tesla community mapping
+      for the surgical 3 tesla hippocampal-asymmetry claim.

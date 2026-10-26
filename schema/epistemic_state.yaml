@@ -1,0 +1,26 @@
+# EvidenceGraph E2 state vocabulary. States coexist. Missing artifacts are not a failed reproduction.
+schema_version: 0.1
+states:
+  reported:
+    meaning: the manuscript asserts the claim
+  evidence_linked:
+    meaning: one or more source spans are mapped
+  expert_adjudicated:
+    meaning: a reviewer accepted the relation and scope
+  computationally_reproduced:
+    meaning: a documented run met predeclared comparison criteria
+  independently_replicated:
+    meaning: a separate study or dataset supports a comparable claim
+  contested:
+    meaning: contrary evidence exists under comparable scope
+  unknown_not_assessed:
+    meaning: insufficient evidence or missing artifacts
+rules:
+  coexist: true
+  not_a_truth_score: true
+  citation_is_not_support: true
+  missing_code_or_data: unknown_not_assessed
+  missing_code_is_not_failed_reproduction: true
+  computationally_reproduced_may_coexist_with_contested: true
+  extraction_confidence_is_not_empirical_uncertainty: true
+  certificate_of_scientific_correctness: never
