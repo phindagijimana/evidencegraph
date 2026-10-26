@@ -7,13 +7,18 @@ EVI already owns the name. Extraction is not gold. Not a paper-agent.
 ## Go
 
 ```bash
-git clone https://github.com/phindagijimana/evidencegraph.git
-cd evidencegraph && pip install -e .
+pip install git+https://github.com/phindagijimana/evidencegraph.git
 evidencegraph load evaluation/items/I003.yaml
-evidencegraph ingest --doi 10.9999/restricted-mock --license-check
+```
+
+```python
+from evidencegraph import load, ingest
+load("I003.yaml", store="./store")
 ```
 
 Python 3.11+. Network off. No restricted full text. Pilot DOIs are fixtures, not journal articles.
+
+Optional agent transport (load / ingest only): `python -m evidencegraph.mcp`
 
 ```bash
 pytest tests
