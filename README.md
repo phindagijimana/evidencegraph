@@ -1,39 +1,22 @@
 # EvidenceGraph
 
-Binds a published claim to scoped evidence. Incomparable cohort or atlas is **Qualifies**, not Contradicts. Missing code is `unknown_not_assessed`.
+Binds a claim to scoped evidence. Incomparable atlas or cohort is **Qualifies**, not Contradicts. Missing code is Unknown.
 
-EVI already owns the name “Evidence Graphs.” This repo is a binding/scoring protocol, not a new graph product. Extraction is not gold.
+EVI already owns the name. Extraction is not gold. Not a paper-agent.
 
-## Install
-
-```bash
-pip install -e .
-```
-
-Python 3.11+. Network off by default. No restricted full text.
-
-## Use
+## Go
 
 ```bash
+git clone https://github.com/phindagijimana/evidencegraph.git
+cd evidencegraph && pip install -e .
 evidencegraph load evaluation/items/I003.yaml
-evidencegraph query --claim I003 --show-scope
-evidencegraph export --jsonld --item evaluation/items/I001.yaml
-evidencegraph retrieve --bm25 --query "hippocampal asymmetry" --k 5
 evidencegraph ingest --doi 10.9999/restricted-mock --license-check
 ```
 
-Pilot items are fixtures (`10.9999/eg.fixture.*`), not journal articles.
-
-## Tests
+Python 3.11+. Network off. No restricted full text. Pilot DOIs are fixtures, not journal articles.
 
 ```bash
 pytest tests
 ```
 
-## Docs
-
-- [Methods](docs/EvidenceGraph_Methods.md) (E1–E5)
-- [Literature map](docs/EvidenceGraph_Literature_Map.md)
-- [Handbook](annotations/handbook.md)
-
-Apache-2.0.
+[Methods](docs/EvidenceGraph_Methods.md) · Apache-2.0
